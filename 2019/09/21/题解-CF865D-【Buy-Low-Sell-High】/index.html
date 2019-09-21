@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="这道题是今天讲课的一道原题，于是蒟蒻突发奇想决定写一篇题解，如有不适还请大佬们轻喷  我的思路是贪心 我们将每天的价格视为一个个”选项”， 压入小根堆中，为了保证买入操作在卖出操作之前，我们从前往后扫描$p$，对于现在的价格 $p_i$，如果堆顶元素$p_j$ 满足  $p_{j}&amp;lt;p_i$ ，那么，我们取出堆顶，在第$j$天买入股票，在第$i$天卖出股票，此时，我们就可以获得$p_i -">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/09/21/hello-world/index.html">
+<meta property="og:title" content="题解 CF865D 【Buy Low Sell High】">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/index.html">
 <meta property="og:site_name" content="cnyali_sjc 的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="这道题是今天讲课的一道原题，于是蒟蒻突发奇想决定写一篇题解，如有不适还请大佬们轻喷  我的思路是贪心 我们将每天的价格视为一个个”选项”， 压入小根堆中，为了保证买入操作在卖出操作之前，我们从前往后扫描$p$，对于现在的价格 $p_i$，如果堆顶元素$p_j$ 满足  $p_{j}&amp;lt;p_i$ ，那么，我们取出堆顶，在第$j$天买入股票，在第$i$天卖出股票，此时，我们就可以获得$p_i -">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-21T05:23:49.511Z">
+<meta property="og:updated_time" content="2019-09-21T06:14:17.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-  <link rel="canonical" href="http://yoursite.com/2019/09/21/hello-world/">
+<meta name="twitter:title" content="题解 CF865D 【Buy Low Sell High】">
+<meta name="twitter:description" content="这道题是今天讲课的一道原题，于是蒟蒻突发奇想决定写一篇题解，如有不适还请大佬们轻喷  我的思路是贪心 我们将每天的价格视为一个个”选项”， 压入小根堆中，为了保证买入操作在卖出操作之前，我们从前往后扫描$p$，对于现在的价格 $p_i$，如果堆顶元素$p_j$ 满足  $p_{j}&amp;lt;p_i$ ，那么，我们取出堆顶，在第$j$天买入股票，在第$i$天卖出股票，此时，我们就可以获得$p_i -">
+  <link rel="canonical" href="http://yoursite.com/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>Hello World | cnyali_sjc 的博客</title>
+  <title>题解 CF865D 【Buy Low Sell High】 | cnyali_sjc 的博客</title>
   
 
 
@@ -206,7 +206,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="cnyali_sjc">
@@ -218,7 +218,7 @@
       <meta itemprop="name" content="cnyali_sjc 的博客">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Hello World
+        <h1 class="post-title" itemprop="name headline">题解 CF865D 【Buy Low Sell High】
 
           
         </h1>
@@ -234,8 +234,12 @@
                 
               
 
-              <time title="创建时间：2019-09-21 13:23:49" itemprop="dateCreated datePublished" datetime="2019-09-21T13:23:49+08:00">2019-09-21</time>
+              <time title="创建时间：2019-09-21 14:13:19 / 修改时间：14:14:17" itemprop="dateCreated datePublished" datetime="2019-09-21T14:13:19+08:00">2019-09-21</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -249,19 +253,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p>这道题是今天讲课的一道原题，于是蒟蒻突发奇想决定写一篇题解，如有不适还请大佬们轻喷</p>
+<hr>
+<p>我的思路是<strong>贪心</strong></p>
+<p>我们将每天的价格视为一个个”选项”， 压入小根堆中，为了保证买入操作在卖出操作之前，我们从前往后扫描$p$，对于现在的价格 $p_i$，如果堆顶元素$p_j$ 满足  $p_{j}&lt;p_i$ ，那么，我们取出堆顶，在第$j$天买入股票，在第$i$天卖出股票，此时，我们就可以获得$p_i - p_j$ 的收益</p>
+<p>然而，如果之后有$p_k$ 满足$p_k &gt; p_i$ ，辣么，我们当前作出的决策可能并不是最优的，如何反悔呢？</p>
+<p> 于是，当我们进行上述操作时，我们将$p_i$也压入堆中，增加一个$p_i$的选项，弹出时，我们相当于将$p_j$按照$p_i$的价格又买了回来</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxN = <span class="number">300001</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, pi;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">priority_queue&lt; <span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; Q; <span class="comment">//小根堆</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123; </span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; pi;</span><br><span class="line">		<span class="keyword">if</span> (!Q.empty() &amp;&amp; (Q.top() &lt; pi)) &#123;</span><br><span class="line">			ans += (pi - Q.top());</span><br><span class="line">			Q.pop(); </span><br><span class="line">			Q.push(pi);</span><br><span class="line">		&#125;</span><br><span class="line">		Q.push(pi);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
     </div>
 
@@ -278,15 +278,15 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/09/21/hello-world/" rel="next" title="Hello World">
+                  <i class="fa fa-chevron-left"></i> Hello World
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/" rel="prev" title="题解 CF865D 【Buy Low Sell High】">
-                  题解 CF865D 【Buy Low Sell High】 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -335,8 +335,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
