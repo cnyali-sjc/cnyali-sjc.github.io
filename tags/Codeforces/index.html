@@ -57,26 +57,26 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="cnyali_sjc 的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/Codeforces/index.html">
 <meta property="og:site_name" content="cnyali_sjc 的博客">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cnyali_sjc 的博客">
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/tags/Codeforces/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
+    isHome: false,
     isPost: false,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>cnyali_sjc 的博客</title>
+  <title>标签: Codeforces | cnyali_sjc 的博客</title>
   
 
 
@@ -204,92 +204,75 @@
         <div class="content-wrap">
             
 
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+
           <div id="content" class="content">
             
-  <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="cnyali_sjc">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.v2ex.com/gravatar/a14fdd5448625875d864a3e107def6f3?s=1000&d=mm">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="cnyali_sjc 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/" class="post-title-link" itemprop="url">题解 CF865D 【Buy Low Sell High】</a>
-          
+  
+  
+  
+  <div class="post-block tag">
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1 class="collection-header">Codeforces<small>标签</small>
         </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-09-21 14:13:19 / 修改时间：15:09:07" itemprop="dateCreated datePublished" datetime="2019-09-21T14:13:19+08:00">2019-09-21</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+      </div>
 
       
-          <p>这道题是今天讲课的一道原题，于是蒟蒻突发奇想决定写一篇题解，如有不适还请大佬们轻喷</p>
-<hr>
-<p>我的思路是<strong>贪心</strong></p>
-<p>我们将每天的价格视为一个个”选项”， 压入小根堆中，为了保证买入操作在卖出操作之前，我们从前往后扫描$p$，对于现在的价格 $p<em>i$，如果堆顶元素$p_j$ 满足  $p</em>{j}&lt;p_i$ ，那么，我们取出堆顶，在第$j$天买入股票，在第$i$天卖出股票，此时，我们就可以获得$p_i - p_j$ 的收益</p>
-<p>然而，如果之后有$p_k$ 满足$p_k &gt; p_i$ ，辣么，我们当前作出的决策可能并不是最优的，如何反悔呢？</p>
-<p> 于是，当我们进行上述操作时，我们将$p_i$也压入堆中，增加一个$p_i$的选项，弹出时，我们相当于将$p_j$按照$p_i$的价格又买了回来</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxN = <span class="number">300001</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, pi;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">priority_queue&lt; <span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt; &gt; Q; <span class="comment">//小根堆</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123; </span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; pi;</span><br><span class="line">		<span class="keyword">if</span> (!Q.empty() &amp;&amp; (Q.top() &lt; pi)) &#123;</span><br><span class="line">			ans += (pi - Q.top());</span><br><span class="line">			Q.pop(); </span><br><span class="line">			Q.push(pi);</span><br><span class="line">		&#125;</span><br><span class="line">		Q.push(pi);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-      
+  
+  
+
+  
+    
+    <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
     </div>
+  
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
         
-      </footer>
-  </div>
-  
-  
-  
+          <a class="post-title-link" href="/2019/09/21/题解-CF865D-【Buy-Low-Sell-High】/" itemprop="url">
+            <span itemprop="name">题解 CF865D 【Buy Low Sell High】</span>
+          </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2019-09-21T14:13:19+08:00"
+              content="2019-09-21">
+          09-21
+        </time>
+      </div>
+
+    </header>
   </article>
 
-    
+
+
+    </div>
   </div>
+  
+  
+  
 
   
+
 
 
           </div>
